@@ -4,6 +4,7 @@
 //*****************************************************************************
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 const int SIZE = 5;
@@ -11,8 +12,9 @@ const int SIZE = 5;
 void displayArray(string *);
 string* reverseArray(string *);
 
-main()
+int main()
 {
+    string *stringPtr, *revStringPtr = nullptr;
     
 
     return 0;
@@ -21,10 +23,11 @@ main()
 void displayArray(string *arr)
 {
     for(int i = 0; i < SIZE; ++i)
-        cout << *(arr + i);
+        cout << *(arr + i) << " ";
+    cout << endl;
 }
 
-string* (string *arr)
+string* reverseArray(string *arr)
 {
 
 }
