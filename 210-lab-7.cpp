@@ -14,9 +14,13 @@ string* reverseArray(string *);
 
 int main()
 {
+    //dynamically allocate a string array
+    //revStringPtr will be dynamically allocated in reverseArray()
     string *stringPtr, *revStringPtr = nullptr;
-    
+    stringPtr = new string[SIZE];
 
+    delete [] stringPtr;
+    delete [] revStringPtr;
     return 0;
 }
 
