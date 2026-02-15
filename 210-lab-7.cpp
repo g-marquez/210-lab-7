@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 
 const int SIZE = 5;
@@ -18,6 +19,13 @@ int main()
     //revStringPtr will be dynamically allocated in reverseArray()
     string *stringPtr, *revStringPtr = nullptr;
     stringPtr = new string[SIZE];
+
+    ifstream fin("names.txt");
+    if (!fin.is_open())
+    {
+        cout << "ERROR! Please verify file name and directory and restart program.";
+        return 1;
+    }
 
     delete [] stringPtr;
     delete [] revStringPtr;
