@@ -1,6 +1,7 @@
 //*****************************************************************************
 // COMSC-210 | Lab 7 | Gabriel Marquez
-// Description: this program reverses a dynamic string array.
+// Description: this program reverses a dynamic string array while utilizing
+// pointer notation.
 //*****************************************************************************
 
 #include <iostream>
@@ -15,7 +16,7 @@ string* reverseArray(string *);
 
 int main()
 {
-    //dynamically allocate a string array
+    //dynamically allocate a string array of size SIZE
     //revStringPtr will be dynamically allocated in reverseArray()
     string *stringPtr, *revStringPtr = nullptr;
     stringPtr = new string[SIZE];
@@ -41,12 +42,16 @@ int main()
     cout << "Reversed array: ";
     displayArray(revStringPtr);
 
-    //be responsible and delete both arrays
+    //be responsible with memory and delete both arrays
     delete [] stringPtr;
     delete [] revStringPtr;
     return 0;
 }
 
+// displayArray() takes a dynamic string array and outputs it elements
+// to the console on one line.
+// arguments: a dynamic string array
+// returns: n/a
 void displayArray(string *arr)
 {
     for(int i = 0; i < SIZE; ++i)
@@ -54,6 +59,10 @@ void displayArray(string *arr)
     cout << endl;
 }
 
+// reverseArray() takes a dynamic string array, reverses the elements, and
+// returns a pointer to the modified array.
+// arguments: a dynamic string array
+// returns: a pointer to the reversed array
 string* reverseArray(string *original)
 {
     string *temp = nullptr;
