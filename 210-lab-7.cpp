@@ -30,14 +30,18 @@ int main()
     for (int i = 0; i < SIZE; ++i)
         fin >> *(stringPtr + i);
 
+    fin.close();
+
     //display original array
     cout << "Original array: ";
     displayArray(stringPtr);
     
     //reverse array and display it reversed
     revStringPtr = reverseArray(stringPtr);
-    cout << ""
+    cout << "Reversed array: ";
+    displayArray(revStringPtr);
 
+    //be responsible and delete both arrays
     delete [] stringPtr;
     delete [] revStringPtr;
     return 0;
@@ -55,6 +59,6 @@ string* reverseArray(string *original)
     string *temp = nullptr;
     temp = new string[SIZE];
     for (int i = 0; i < SIZE; ++i)
-        *(temp +i) = *(original - 1 - i);
+        *(temp + i) = *(original + SIZE - 1 - i);
     return temp;
 }
