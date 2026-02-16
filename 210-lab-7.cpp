@@ -26,11 +26,7 @@ int main()
         cout << "ERROR! Please verify file name and directory and restart program.";
         return 1;
     }
-    bool stop_loop = false;
-    while(!stop_loop)
-    {
-        
-    }
+    
 
     delete [] stringPtr;
     delete [] revStringPtr;
